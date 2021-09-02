@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+/* --------------------------------------------------------------------------------------------------------------------------- Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300;1,900&display=swap');
+
+/* list of fonts 
+thin: 100
+light: 300 italic / 300
+regular: 400
+bold: 700
+black: 900 italic 
+*/
+
+
+/* --------------------------------------------------------------------------------------------------------------------------- Global styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* --------------------------------------------------------------------------------------------------------------------------- Header */
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    text-transform: uppercase;
+    padding: 1em;
+    padding-bottom: 1.5em;
+    color: white;
+    font-style: italic;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    z-index: 10;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header p {
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header h1 {
+    font-size: 36px;
+    font-weight: 900;
+    margin-top: -6px;
 }
 
-.App-link {
-  color: #61dafb;
+/* --------------------------------------------------------------------------------------------------------------------------- Drinks list */
+
+.List {
+    --padding: 1.2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--padding);
+    margin: 150px 0 100px 0;
+    padding: 0 var(--padding);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.List article {
+    position: relative;
+    background-color: #373737;
+    color: white;
+    width: 100%;
+}
+
+.List article img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+
+.List article div {
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.List article div h2 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.List article div p {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------- Drinks info */
+
+.drinkInfo {
+    --padding-top: 4em;
+    position: relative;
+    padding-top: var(--padding-top);
+    height: calc(100vh - var(--padding-top));
+    width: 100%;
+}
+
+.drinkInfo section {
+    padding: 0 1em;
+}
+
+.drinkInfo section:nth-child(1) {
+    position: relative;
+    background-color: black;
+    height: 60%;
+    padding-top: 3em;
+    color: white;
+}
+
+.drinkInfo section:nth-child(1) .drink-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .6;
+    z-index: 0;
+}
+
+.drinkInfo section:nth-child(1) .ingrCont {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.drinkInfo section:nth-child(1) .ingrCont ul:first-child {
+    margin-right: 1em;
+}
+
+.drinkInfo section h2 {
+    position: relative;
+    text-transform: uppercase;
+    margin-top: 1em;
+    margin-bottom: .1em;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.drinkInfo section p,
+.drinkInfo section li {
+    position: relative;
+    font-weight: 400;
+    font-size: 14px;
+    list-style: none;
+}
+
+.drinkInfo section ul:nth-of-type(2) li {
+    font-weight: 300;
+    font-style: italic;
+}
+
+.drinkInfo .modified {
+    font-weight: 300;
+    font-size: 10px;
+    margin-top: .5em;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------- Botom nav */
+
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    position: relative;
+    height: 100%;
+    width: 60px;
+    height: 60px;
+}
+
+nav a img {
+    max-width: 100%;
 }
