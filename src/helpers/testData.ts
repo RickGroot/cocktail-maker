@@ -1,6 +1,5 @@
 /* eslint-disable */
-export const data = {
-    "drinks": [{
+export const testData = [{
         "idDrink": "17208",
         "strDrink": "Rose",
         "strDrinkAlternate": null,
@@ -1249,4 +1248,3 @@ export const data = {
         "strCreativeCommonsConfirmed": "No",
         "dateModified": "2017-08-24 09:31:52"
     }]
-}

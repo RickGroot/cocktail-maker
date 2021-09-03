@@ -1,14 +1,9 @@
 import ListItem from "./ListItem";
 
 const List = ({data}) => {
-
-    const drinks = data.drinks;
-
     return (
         <section className='List'>
-            {drinks.map((value) => {
-                return <ListItem data={value} />
-            })}
+            {data.map(value => <ListItem data={value} key={value.idDrink}/>)}
         </section>
     );
 }

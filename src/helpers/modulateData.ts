@@ -10,6 +10,8 @@ interface drink {
     dateModified: string;
 }
 
+// ------------------------------------------------------------------------------------------------------------------ exported functions
+
 function modulateDrinkData(data) {
     let drinkObj = data.drinks[0]
 
@@ -28,6 +30,20 @@ function modulateDrinkData(data) {
     return newData;
 }
 
+function modulateListData(data) {
+    let drinkObj = data.drinks[0]
+
+    let newData = {
+        idDrink: drinkObj.idDrink,
+        image: drinkObj.strDrinkThumb,
+        strDrink: drinkObj.strDrink,
+        strCategory: drinkObj.strCategory,
+    }
+
+    return newData;
+}
+
+// ------------------------------------------------------------------------------------------------------------------ helping functions
 function ingredientList(data) {
     let ingredients: string[] = [];
     for (let i = 1; i <= 15; i++) {
@@ -54,6 +70,9 @@ function measureList(data) {
     return measures;
 }
 
+// ------------------------------------------------------------------------------------------------------------------ export
+
 export {
-    modulateDrinkData
+    modulateDrinkData,
+    modulateListData
 }
