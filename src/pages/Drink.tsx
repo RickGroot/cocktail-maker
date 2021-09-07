@@ -49,7 +49,7 @@ const Drink = (props) => {
                 </section>
             </article>
 
-            <Nav color="#6320EE" />
+            <Nav color="#6320EE"/>
         </main>
     );
 }
