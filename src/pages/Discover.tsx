@@ -6,7 +6,7 @@ import Loading from '../components/Loading';
 import {modulateListData} from "../helpers/modulateData";
 
 const Discover = () => {
-    let [data, setData] = useState<any>(null)
+    let [data, setData] = useState<any>(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -17,11 +17,11 @@ const Discover = () => {
                 await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
                     .then(response => response.json())
                     .then(data => modulateListData(data))
-                    .then(data => list.push(data))
+                    .then(data => list.push(data));
             }
         return setData(list);
         }
-        fetchData()
+        fetchData();
     },[])
 
     return (
