@@ -6,7 +6,7 @@ import {modulateDrinkData} from "../helpers/modulateData"
 const Drink = (props) => {
 
     let id = props.match.params.idDrink;
-    let [data, setData] = useState({idDrink: "", image: "", strDrink: "", strCategory: "", strGlass: "", ingredients: [""], measures: [""], strInstructions: "", dateModified: ""})
+    let [data, setData] = useState({idDrink: "", image: "", strDrink: "", strCategory: "", strGlass: "", ingredients: [""], measures: [""], strInstructions: "", dateModified: ""});
 
     useEffect(() => {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id)
